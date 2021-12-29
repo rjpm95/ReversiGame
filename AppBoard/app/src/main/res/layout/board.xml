@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ReversiGame"
+    android:background="#63A681"
+    android:id="@+id/board">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/bombButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ACD1AF"
+            android:layout_margin="6dp"
+            android:text = "Bomb"
+            android:tag="normalButton"
+            android:onClick="onBomb"/>
+
+        <Button
+            android:id="@+id/switchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:background="#ACD1AF"
+            android:text = "Switch"
+            android:onClick="onSwitch"/>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutTabuleiro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="160dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/Pos00"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos01"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos02"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos03"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos04"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos05"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos06"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos07"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+            <ImageButton
+                android:id="@+id/Pos10"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos11"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos12"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos13"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos14"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos15"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos16"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos17"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+            <ImageButton
+                android:id="@+id/Pos20"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos21"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos22"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos23"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos24"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos25"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos26"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos27"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+            <ImageButton
+                android:id="@+id/Pos30"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos31"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos32"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos33"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos34"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos35"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos36"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos37"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+            <ImageButton
+                android:id="@+id/Pos40"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos41"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos42"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos43"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos44"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos45"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos46"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos47"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+
+            <ImageButton
+                android:id="@+id/Pos50"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos51"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos52"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos53"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos54"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos55"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos56"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos57"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+
+            <ImageButton
+                android:id="@+id/Pos60"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos61"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos62"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos63"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos64"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos65"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos66"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos67"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
+
+            <ImageButton
+                android:id="@+id/Pos70"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos71"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos72"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos73"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos74"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos75"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos76"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+
+            <ImageButton
+                android:id="@+id/Pos77"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/cell"
+                android:onClick="onPlay"
+                android:scaleType="fitCenter" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutScores"
+        android:background="#ACD1AF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutTabuleiro"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textViewPlayer1"
+            android:text="Player 1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/scorePlayer1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/scorePlayer1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textViewPlayer1"
+            app:layout_constraintStart_toStartOf="@+id/textViewPlayer1"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPlayer1" />
+
+        <TextView
+            android:id="@+id/textViewPlayer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="15dp"
+            android:text="Player2"
+            app:layout_constraintBottom_toTopOf="@+id/scorePlayer2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textViewPlayer1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/scorePlayer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textViewPlayer2"
+            app:layout_constraintStart_toStartOf="@+id/textViewPlayer2"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPlayer2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
